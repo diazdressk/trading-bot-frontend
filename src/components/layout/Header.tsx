@@ -21,16 +21,16 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="border-b bg-background">
-        <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-          <h1 className="text-xl font-bold">Trading Bots Dashboard</h1>
-          <nav className="flex items-center gap-4">
-            <Button variant="ghost" onClick={() => navigate('/bots')} className="cursor-pointer">
+        <div className="container mx-auto px-3 sm:px-4 py-2 sm:py-3 flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-center">
+          <h1 className="text-lg sm:text-xl font-bold">Trading Bots Dashboard</h1>
+          <nav className="flex items-center gap-2 sm:gap-4">
+            <Button variant="ghost" onClick={() => navigate('/bots')} className="cursor-pointer text-sm sm:text-base h-8 sm:h-10 px-2 sm:px-4">
               Bots
             </Button>
-            <Button variant="ghost" onClick={() => navigate('/stats')} className="cursor-pointer">
+            <Button variant="ghost" onClick={() => navigate('/stats')} className="cursor-pointer text-sm sm:text-base h-8 sm:h-10 px-2 sm:px-4">
               Statistics
             </Button>
-            <Button variant="outline" onClick={handleLogoutClick} className="cursor-pointer">
+            <Button variant="outline" onClick={handleLogoutClick} className="cursor-pointer text-sm sm:text-base h-8 sm:h-10 px-2 sm:px-4">
               Logout
             </Button>
           </nav>

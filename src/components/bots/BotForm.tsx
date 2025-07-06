@@ -65,8 +65,8 @@ const BotForm: React.FC<BotFormProps> = ({ bot, onClose, onSuccess }) => {
 
   return (
     <Dialog open={true} onOpenChange={onClose}>
-      <DialogContent className="max-w-md">
-        <DialogHeader>
+      <DialogContent className="max-w-md p-4 sm:p-6">
+        <DialogHeader className="pb-3">
           <DialogTitle>
             {isEditing ? 'Edit bot' : 'Create new bot'}
           </DialogTitle>
@@ -75,7 +75,7 @@ const BotForm: React.FC<BotFormProps> = ({ bot, onClose, onSuccess }) => {
         </DialogHeader>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4">
+          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-3">
             {error && (
               <Alert variant="destructive" className="border-red-200 bg-red-50">
                 <AlertCircle className="h-4 w-4" />

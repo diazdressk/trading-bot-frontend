@@ -65,12 +65,13 @@ const BotsPage = () => {
   const hasAnyBots = publicBots.length > 0 || myBots.length > 0;
 
   return (
-    <div className="space-y-6">
-      <div className="flex justify-between items-center animate-in fade-in-0 slide-in-from-top-4 duration-500">
-        <h1 className="text-3xl font-bold">Trading bots</h1>
+    <div className="space-y-4 sm:space-y-6">
+      <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-center animate-in fade-in-0 slide-in-from-top-4 duration-500">
+        <h1 className="text-2xl sm:text-3xl font-bold">Trading bots</h1>
         <Button
           onClick={handleCreateBot}
-          className="cursor-pointer hover:scale-105 transition-transform duration-200"
+          className="cursor-pointer hover:scale-105 transition-transform duration-200 w-full sm:w-auto"
+          size="sm"
         >
           <Plus className="h-4 w-4 mr-2" />
           Create bot
@@ -86,12 +87,12 @@ const BotsPage = () => {
       {!hasAnyBots ? (
         <BotsEmptyState onCreateBot={handleCreateBot} />
       ) : (
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {publicBots.length > 0 && (
             <div className="animate-in fade-in-0 slide-in-from-left-4 duration-700">
-              <div className="border-b pb-2 mb-4">
-                <h2 className="text-xl font-semibold text-blue-600">Public bots</h2>
-                <p className="text-sm text-gray-500">
+              <div className="border-b pb-2 mb-3 sm:mb-4">
+                <h2 className="text-lg sm:text-xl font-semibold text-blue-600">Public bots</h2>
+                <p className="text-xs sm:text-sm text-gray-500 mt-1">
                   These bots are available to all users for viewing. They cannot be edited or deleted.
                 </p>
               </div>
@@ -105,9 +106,9 @@ const BotsPage = () => {
           )}
 
           <div className="animate-in fade-in-0 slide-in-from-right-4 duration-700">
-            <div className="border-b pb-2 mb-4">
-              <h2 className="text-xl font-semibold text-green-600">My bots</h2>
-              <p className="text-sm text-gray-500">
+            <div className="border-b pb-2 mb-3 sm:mb-4">
+              <h2 className="text-lg sm:text-xl font-semibold text-green-600">My bots</h2>
+              <p className="text-xs sm:text-sm text-gray-500 mt-1">
                 Your personal bots. You can create, edit and delete them.
               </p>
             </div>
@@ -119,9 +120,9 @@ const BotsPage = () => {
                 onDelete={handleDelete}
               />
             ) : (
-              <div className="text-center py-12">
-                <p className="text-gray-500 mb-4">You don't have any bots yet</p>
-                <Button onClick={handleCreateBot} className="cursor-pointer">
+              <div className="text-center py-8 sm:py-12">
+                <p className="text-gray-500 mb-3 sm:mb-4 text-sm sm:text-base">You don't have any bots yet</p>
+                <Button onClick={handleCreateBot} className="cursor-pointer w-full sm:w-auto" size="sm">
                   <Plus className="h-4 w-4 mr-2" />
                   Create your first bot
                 </Button>

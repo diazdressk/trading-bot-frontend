@@ -11,7 +11,7 @@ interface BotCardHeaderProps {
 
 export const BotCardHeader: React.FC<BotCardHeaderProps> = ({ bot }) => {
   return (
-    <CardHeader className="pb-1 pt-1.5 px-2">
+    <CardHeader className="pb-0.5 pt-0.5 px-1.5 sm:px-2 sm:pt-1">
       <div className="flex items-center justify-between gap-2 mb-0.5">
         <div className="flex items-center gap-1.5 flex-1 min-w-0">
           <h3 className="font-semibold text-xs truncate group-hover:text-blue-600 transition-colors">

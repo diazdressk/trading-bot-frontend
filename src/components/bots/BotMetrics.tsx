@@ -21,9 +21,9 @@ const MetricItem: React.FC<MetricItemProps> = ({
   hoverColor, 
   iconColor 
 }) => (
-  <div className={`bg-gradient-to-br from-gray-50 to-gray-100 rounded-md p-1 ${hoverColor} transition-all duration-200`}>
+  <div className={`bg-gradient-to-br from-gray-50 to-gray-100 rounded-md p-0.5 sm:p-1 ${hoverColor} transition-all duration-200`}>
     <div className="flex items-center gap-0.5">
-      <Icon className={`w-2.5 h-2.5 ${iconColor}`} />
+      <Icon className={`w-2 h-2 sm:w-2.5 sm:h-2.5 ${iconColor}`} />
       <p className="text-xs text-gray-500">{label}</p>
     </div>
     <p className="font-semibold text-xs mt-0.5">{value}</p>
@@ -32,7 +32,7 @@ const MetricItem: React.FC<MetricItemProps> = ({
 
 export const BotMetrics: React.FC<BotMetricsProps> = ({ bot }) => {
   return (
-    <div className="grid grid-cols-2 gap-1 mb-1">
+    <div className="grid grid-cols-2 gap-0.5 sm:gap-1 mb-0.5">
       <MetricItem
         icon={DollarSign}
         label="Deposit"
