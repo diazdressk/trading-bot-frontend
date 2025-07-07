@@ -1,8 +1,8 @@
 import {
-  StatsCard,
   StatsEmptyState,
   StatsLoadingState,
   StatsSummaryCards,
+  StatsTable,
 } from '@/components/stats';
 import { Alert, AlertDescription } from '@/components/ui/alert';
 import { useStatsStore } from '@/stores';
@@ -31,13 +31,13 @@ const StatsPage = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-4 sm:space-y-6">
       <div className="animate-in fade-in-0 slide-in-from-top-4 duration-500">
-        <h1 className="text-3xl font-bold flex items-center gap-3">
-          <BarChart3 className="w-8 h-8 text-blue-600" />
+        <h1 className="text-2xl sm:text-3xl font-bold flex items-center gap-2 sm:gap-3">
+          <BarChart3 className="w-6 h-6 sm:w-8 sm:h-8 text-blue-600" />
           Bot Statistics
         </h1>
-        <p className="text-gray-500 mt-2">Track your trading performance and analytics</p>
+        <p className="text-sm sm:text-base text-gray-500 mt-1 sm:mt-2">Track your trading performance and analytics</p>
       </div>
 
       {error && (
@@ -63,19 +63,7 @@ const StatsPage = () => {
             totalBots={statistics.length}
           />
 
-          <div className="space-y-4">
-            <h2
-              className="text-xl font-semibold text-gray-800 opacity-0 bot-card-enter"
-              style={{ animationDelay: '700ms' }}
-            >
-              Individual Bot Performance
-            </h2>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-              {statistics.map((stat, index) => (
-                <StatsCard key={stat.id} stat={stat} index={index} />
-              ))}
-            </div>
-          </div>
+          <StatsTable statistics={statistics} />
         </>
       )}
     </div>

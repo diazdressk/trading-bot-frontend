@@ -28,9 +28,7 @@ const computeStats = (statistics: BotStatistic[]) => {
   const totalDeposit = statistics.reduce((sum, stat) => sum + stat.deposit_usdt, 0);
   const totalProfit = statistics.reduce((sum, stat) => sum + stat.profit_usdt, 0);
   const totalCycles = statistics.reduce((sum, stat) => sum + stat.cycles_completed, 0);
-  const avgProfitPercentage = statistics.length > 0
-    ? statistics.reduce((sum, stat) => sum + stat.profit_percentage, 0) / statistics.length
-    : 0;
+  const avgProfitPercentage = totalDeposit > 0 ? (totalProfit / totalDeposit) * 100 : 0;
   const profitableBots = statistics.filter(stat => stat.profit_usdt > 0).length;
   const activeBots = statistics.length;
 
