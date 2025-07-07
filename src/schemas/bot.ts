@@ -20,7 +20,7 @@ export const botSchema = z.object({
   num_orders: z
     .number()
     .int('Number of orders must be an integer')
-    .min(2, 'There must be at least 2 orders')
+    .min(1, 'There must be at least 1 order')
     .max(100, 'Cannot exceed 100 orders'),
   grid_length: z
     .number()

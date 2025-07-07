@@ -88,7 +88,7 @@ export const StatsSummaryCards = ({
         <CardHeader className="pb-1 pt-3 px-3">
           <div className="flex items-center gap-1.5">
             <Target className="w-4 h-4 text-orange-600" />
-            <h3 className="text-xs font-medium text-gray-600">Avg Profit %</h3>
+            <h3 className="text-xs font-medium text-gray-600">Total Profit %</h3>
           </div>
         </CardHeader>
         <CardContent className="pt-0 px-3 pb-3">
